@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Graph | DOB Job Applications</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div id="banner" class="container center">
+    <h1>DOB Job Application Filings</h1>
+  </div>
+  <nav class="container center">
+    <a href="index.html">Home</a>
+    <a href="info.html">Job Card</a>
+    <a href="analysis.html">Graph</a>
+  </nav>
+  <div class="container subbanner">
+    <p>This page shows a graph summarizing DOB job application filings by borough.</p>
+  </div>
+  <div class="container">
+    <div class="card" style="flex:1;">
+      <h3>Applications by Borough</h3>
+      <canvas id="boroughChart" width="400" height="300"></canvas>
+    </div>
+  </div>
+  <div id="footer" class="container center">
+    <h3>@2030 You need a job? We got you.</h3>
+  </div>
+  <script>
+    const ctx = document.getElementById('boroughChart').getContext('2d');
+    const chart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Manhattan', 'Brooklyn', 'Queens', 'Bronx', 'Staten Island'],
+        datasets: [{
+          label: 'Number of Applications',
+          data: [150, 200, 180, 100, 50],
+          backgroundColor: 'cornflowerblue'
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

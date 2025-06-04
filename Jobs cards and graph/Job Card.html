@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Job Card | DOB Job Applications</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body onload="init()">
+  <div id="banner" class="container center">
+    <h1>DOB Job Application Filings</h1>
+  </div>
+  <nav class="container center">
+    <a href="index.html">Home</a>
+    <a href="info.html">Job Card</a>
+    <a href="analysis.html">Graph</a>
+  </nav>
+  <div class="container subbanner">
+    <p>Use the dropdowns to filter job filings by borough, type, or status.</p>
+  </div>
+  <div class="container">
+    <div class="card">
+      <h3>Filter Options</h3>
+      <label>Borough:</label>
+      <select id="boroughs"></select><br><br>
+      <label>Job Type:</label>
+      <select id="types"></select><br><br>
+      <label>Status:</label>
+      <select id="statuses"></select><br><br>
+      <a class="button" onclick="filterJobs()">Apply Filters</a>
+    </div>
+    <div class="card" style="flex:2;">
+      <h1>Job Cards</h1>
+      <div id="result"></div>
+      <div id="output" style="display:flex; flex-wrap:wrap;"></div>
+    </div>
+  </div>
+  <div id="footer" class="container center">
+    <h3>@2030 You need a job? We got you.</h3>
+  </div>
+</body>
+</html>
